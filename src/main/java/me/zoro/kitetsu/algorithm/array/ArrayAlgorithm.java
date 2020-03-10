@@ -1,5 +1,6 @@
 package me.zoro.kitetsu.algorithm.array;
 
+
 /**
  * @author luguanquan
  * @date 2020-03-07 15:58
@@ -19,11 +20,12 @@ public class ArrayAlgorithm {
 		}
 		Integer temp = null;
 		for (int i = 0; i < array.length; i++) {
-			temp = array[i];
 			// 这个判断可以不用，但用了之后如果有重复值能提前知道
 			if (i != array[i] && array[i].equals(array[array[i]])) {
 				return true;
 			}
+			// 交换位置
+			temp = array[i];
 			array[i] = array[temp];
 			array[temp] = temp;
 		}

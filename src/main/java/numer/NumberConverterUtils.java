@@ -1,4 +1,4 @@
-package me.zoro.kitetsu.util;
+package numer;
 
 /**
  * @author luguanquan
@@ -16,6 +16,7 @@ public final class NumberConverterUtils {
 			'Y', 'Z'};
 
 	/**
+	 * 62进制，可用于短域名设计
 	 * @param number 十进制数自然数
 	 * @return 转换成62进制的字符串
 	 */

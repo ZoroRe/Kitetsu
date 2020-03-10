@@ -1,5 +1,6 @@
 package me.zoro.kitetsu.util;
 
+import numer.NumberConverterUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +27,7 @@ public class NumberConverterUtilsTest {
 		assertEquals("ZZZ", NumberConverterUtils.decimalTo62(238327L));
 		assertEquals("ZZZZ", NumberConverterUtils.decimalTo62(14776335L));
 		assertEquals("ZZZZZ", NumberConverterUtils.decimalTo62(916132831L));
+		assertEquals("100000", NumberConverterUtils.decimalTo62(916132832L));
 	}
 
 	@Test

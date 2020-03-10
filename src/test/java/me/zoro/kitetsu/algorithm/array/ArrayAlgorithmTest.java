@@ -26,8 +26,9 @@ public class ArrayAlgorithmTest {
 		assertEquals(false, ArrayAlgorithm.hasRepeatInArray(arr3));
 		Integer[] arrT0 = new Integer[]{0, 0};
 		Integer[] arrT1 = new Integer[]{0, 1, 0};
-		Integer[] arrT2 = new Integer[]{0, 1, 2, 2};
-		Integer[] arrT3 = new Integer[]{0, 1, 2, 2, 3, 4, 5, 6, 7};
+		Integer[] arrT2 = new Integer[]{1, 1, 0};
+		Integer[] arrT3 = new Integer[]{0, 1, 2, 2};
+		Integer[] arrT4 = new Integer[]{0, 1, 2, 2, 3, 4, 5, 6, 7};
 		assertEquals(true, ArrayAlgorithm.hasRepeatInArray(arrT0));
 		assertEquals(true, ArrayAlgorithm.hasRepeatInArray(arrT1));
 		assertEquals(true, ArrayAlgorithm.hasRepeatInArray(arrT2));
