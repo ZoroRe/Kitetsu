@@ -23,9 +23,9 @@ import java.util.UUID;
  * 这样客户端提交 jwt 只要能成功解密，就能识别出客户端的信息，也能验证身份。但是对加密用的密钥一定要保存好
  */
 @Slf4j
-public class JwtUtils {
+public class JwtGenerator {
 
-	public String generateJwt(String userId, String keyScrept) {
+	public String generate(String userId, String keySecret) {
 		// 第一部分
 		JwtHeader jwtHeader = new JwtHeader();
 		jwtHeader.setTyp("JWT");
@@ -38,7 +38,7 @@ public class JwtUtils {
 		jwtPayload.setIss(userId);
 		jwtPayload.setMail("zoro@hello.com");
 		jwtPayload.setType("0");
-		jwtPayload.setSub("ccc");
+		jwtPayload.setSub("kiteesu");
 		Long current = System.currentTimeMillis() / 1000;
 		jwtPayload.setIat(current);
 		// 有效期十秒
@@ -46,12 +46,12 @@ public class JwtUtils {
 		jwtPayload.setJti(HashUtils.md5(UUID.randomUUID().toString() + current));
 		String payload = Base64.getUrlEncoder().encodeToString(JsonHelper.toJson(jwtPayload).getBytes()).replace("=", "");
 
-		String signature = HMACSHA256((header + "." + payload).getBytes(), keyScrept.getBytes()).replace("=", "");
+		String signature = HmacSha256((header + "." + payload).getBytes(), keySecret.getBytes()).replace("=", "");
 		String jwt = header + "." + payload + "." + signature;
 		return jwt;
 	}
 
-	public static String HMACSHA256(byte[] data, byte[] key) {
+	public static String HmacSha256(byte[] data, byte[] key) {
 		try {
 			SecretKeySpec signingKey = new SecretKeySpec(key, "HmacSHA256");
 			Mac mac = Mac.getInstance("HmacSHA256");
@@ -59,9 +59,9 @@ public class JwtUtils {
 			String hash = Base64.getUrlEncoder().encodeToString(mac.doFinal(data));
 			return hash.replace("=", "");
 		} catch (NoSuchAlgorithmException e) {
-			log.error("HMACSHA256 加密失败:{}", e);
+			log.error("HmacSha256 加密失败:{}", e);
 		} catch (InvalidKeyException e) {
-			log.error("HMACSHA256 加密失败:{}", e);
+			log.error("HmacSha256 加密失败:{}", e);
 		}
 		return null;
 	}
