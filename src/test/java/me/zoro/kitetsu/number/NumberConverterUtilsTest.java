@@ -1,6 +1,5 @@
-package me.zoro.kitetsu.util;
+package me.zoro.kitetsu.number;
 
-import numer.NumberConverterUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

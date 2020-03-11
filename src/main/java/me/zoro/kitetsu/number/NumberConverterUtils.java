@@ -1,4 +1,4 @@
-package numer;
+package me.zoro.kitetsu.number;
 
 /**
  * @author luguanquan

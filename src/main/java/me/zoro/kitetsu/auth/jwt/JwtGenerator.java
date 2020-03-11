@@ -25,17 +25,17 @@ import java.util.UUID;
 @Slf4j
 public class JwtGenerator {
 
-	public String generate(String userId, String keySecret) {
+	public String generate( String keySecret) {
 		// 第一部分
 		JwtHeader jwtHeader = new JwtHeader();
 		jwtHeader.setTyp("JWT");
 		jwtHeader.setAlg("HS256");
 		String header = Base64.getUrlEncoder().encodeToString(JsonHelper.toJson(jwtHeader).getBytes()).replace("=", "");
 
-		//
+		//payload 提供能识别用户的信息,然后对其 json 进行 urlEncoder
 		JwtPayload jwtPayload = new JwtPayload();
 		jwtPayload.setName("zoro");
-		jwtPayload.setIss(userId);
+		jwtPayload.setIss("66666");
 		jwtPayload.setMail("zoro@hello.com");
 		jwtPayload.setType("0");
 		jwtPayload.setSub("kiteesu");
@@ -46,6 +46,7 @@ public class JwtGenerator {
 		jwtPayload.setJti(HashUtils.md5(UUID.randomUUID().toString() + current));
 		String payload = Base64.getUrlEncoder().encodeToString(JsonHelper.toJson(jwtPayload).getBytes()).replace("=", "");
 
+		// 签名生成方式
 		String signature = HmacSha256((header + "." + payload).getBytes(), keySecret.getBytes()).replace("=", "");
 		String jwt = header + "." + payload + "." + signature;
 		return jwt;
