@@ -94,39 +94,4 @@ private static final Gson gsonPretty = new GsonBuilder().setPrettyPrinting().cre
 		};
 	}
 
-	public class Test {
-		private Data data;
-
-		public Data getData() {
-			return data;
-		}
-
-		public void setData(Data data) {
-			this.data = data;
-		}
-	}
-
-	public class Data {
-		private String id;
-
-		public String getId() {
-			return id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-	}
-
-	public static void main(String[] args) {
-		Test test1 = JsonHelper.fromJson("{\"data\":{\"id\":\"123455a\"}}", Test.class);
-		Test test2 = JsonHelper.fromJson("{\"data\":{}}", Test.class);
-
-
-		String json = JsonHelper.toJson(test1);
-		String prettyJson = JsonHelper.toPrettyJson(json);
-		if (test1 == null) {
-
-		}
-	}
 }
