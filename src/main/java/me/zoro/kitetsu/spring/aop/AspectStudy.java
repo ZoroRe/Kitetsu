@@ -22,10 +22,13 @@ import java.lang.reflect.Method;
  * 注意一个非常重要的点：比如常用的 aop 注解 @Async, 如果是在使用该注解的方法所在的类中内部自己调用，就不会生效，现在自定义的这个也一样，
  * 猜测原因是 aop 注解的切点，需要经过注入，然后有 Ioc容器 对其注入的类添加了切面代码，而调用自身的类，并不会加入切面代码。这个好好研究下
  * </p>
+ * <p>
+ * 注意这个 @EnableAspectJAutoProxy 中 exposeProxy = true,是为了某些类使用这个注解时调用自身方法，根据需要导出代理类来
+ * </p>
  */
 @Aspect
 @Component
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(exposeProxy = true)
 public class AspectStudy {
 
 	/**
