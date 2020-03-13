@@ -1,0 +1,43 @@
+package me.zoro.kitetsu.redis;
+
+import me.zoro.kitetsu.entity.IDEntity;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * @author luguanquan
+ * @date 2020-03-12 23:40
+ */
+@DisplayName("测试Redis")
+// 这个注解允许去读取配置信息
+@SpringBootTest()
+@ExtendWith(SpringExtension.class)
+public class RedisTest {
+
+
+	@Autowired
+	private RedisService redisService;
+
+	@Test
+	@DisplayName("测试redis存取")
+	public void redisTest() {
+		String key1 = UUID.randomUUID().toString();
+		redisService.set(key1, "hello world", 1, TimeUnit.MINUTES);
+		assertEquals("hello world", redisService.get(key1));
+
+		String key2 = UUID.randomUUID().toString();
+		IDEntity idEntity  = new IDEntity();
+		idEntity.setId(1L);
+		redisService.set(key2, idEntity, 1, TimeUnit.MINUTES);
+		assertEquals(1L, ((IDEntity)redisService.get(key2)).getId());
+	}
+}
