@@ -2,6 +2,7 @@ package me.zoro.kitetsu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -12,6 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * 本项目主要汇集各种本来在学习、工作、面试准备工程汇聚的工具、尝试、算法等,取名鬼彻希望它如一把妖刀这样有强大力量。
  */
 @EnableScheduling
+@EnableFeignClients
 @SpringBootApplication
 public class KitetsuApplication {
 

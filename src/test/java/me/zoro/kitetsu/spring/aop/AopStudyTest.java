@@ -12,14 +12,19 @@ import org.junit.jupiter.api.Test;
 @DisplayName("切面编程测试")
 public class AopStudyTest {
 
-	@AopStudy("World")
-	public String hello() {
-		return "hello";
-	}
 
 	@Test
 	@DisplayName("调用使用了自定义切面的切点方法")
-	public void aopStudyRun(){
-		hello();
+	public void aopStudyRun() {
+		TestAop aop = new TestAop();
+		aop.hello();
+	}
+
+	public static class TestAop {
+
+		@AopStudy("World")
+		public String hello() {
+			return "hello";
+		}
 	}
 }
