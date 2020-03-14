@@ -1,6 +1,6 @@
 package me.zoro.kitetsu.net.feign;
 
-import me.zoro.kitetsu.entity.IDEntity;
+import me.zoro.kitetsu.model.IDEntity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
  * @date 2020-03-13 20:04
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-@DisplayName("FeignService 测试")
+@DisplayName("Feign 测试")
 class FeignServiceTest {
 
 	@Autowired

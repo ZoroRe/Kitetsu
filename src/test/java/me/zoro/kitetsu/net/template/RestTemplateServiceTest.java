@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
  * @date 2020-03-13 20:04
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-@DisplayName("RestTemplateService 测试")
+@DisplayName("RestTemplate 测试")
 @Slf4j
 public class RestTemplateServiceTest {
 

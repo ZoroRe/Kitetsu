@@ -1,4 +1,4 @@
-package me.zoro.kitetsu.entity;
+package me.zoro.kitetsu.model;
 
 import lombok.Data;
 

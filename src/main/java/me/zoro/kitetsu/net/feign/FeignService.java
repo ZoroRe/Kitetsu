@@ -1,6 +1,6 @@
 package me.zoro.kitetsu.net.feign;
 
-import me.zoro.kitetsu.entity.IDEntity;
+import me.zoro.kitetsu.model.IDEntity;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
