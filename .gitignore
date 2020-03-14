@@ -106,6 +106,7 @@ gradle/
 .DS_Store
 */.idea/
 .idea/
+.idea/*
 gradlew
 gradlew.bat
 unused.txt
