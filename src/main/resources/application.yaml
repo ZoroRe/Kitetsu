@@ -14,3 +14,20 @@
 #        min-idle: 0
 server:
   port: 10001
+
+spring:
+  datasource:
+    # 这里关闭了 ssl ，不是很安全，但在本项目先简单实现
+    url: jdbc:mysql://localhost:30301/kitetsu?characterEncoding=utf8&useSSL=false
+    username: kitetsu
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      filter:
+        config:
+          enabled: true
+
+# mybatis使用驼峰字段命名
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
