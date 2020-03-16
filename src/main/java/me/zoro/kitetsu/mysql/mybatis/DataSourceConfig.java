@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * @author luguanquan
  * @date 2020-03-14 10:42
  *
- * 使用阿里的 Druid 数据库连接池
+ * 使用阿里的 Druid 数据库连接池,但现在单数据源，直接使用 application.yaml 的配置就足够
  */
 @Deprecated
 //@Configuration
