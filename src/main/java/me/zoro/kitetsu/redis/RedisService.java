@@ -11,6 +11,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author luguanquan
  * @date 2020-03-13 21:49
+ * 这个项目在本机通过 docker 安装 redis 来运行，安装步骤如下
+ * 0.获取最新 redis 镜像
+ *  docker pull redis:latest
+ * 1.安装redis，映射端口
+ *  docker run -itd --name redis -p 6379:6379 redis
  */
 @Service
 @Slf4j
