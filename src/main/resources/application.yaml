@@ -26,6 +26,17 @@ spring:
       filter:
         config:
           enabled: true
+  # 这里示例一个多数据源的场景,这个 datasource2 名字可以改成其他，但要和后面多数据源相关类匹配
+  datasource2:
+    url: jdbc:mysql://localhost:30301/hello_world?characterEncoding=utf8&useSSL=false
+    username: hello_world
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      filter:
+        config:
+          enabled: true
+
 
 # mybatis使用驼峰字段命名
 mybatis:
