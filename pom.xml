@@ -41,6 +41,13 @@
             <version>2.2.1.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20190722</version>
+        </dependency>
+
+
         <!-- spring boot web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

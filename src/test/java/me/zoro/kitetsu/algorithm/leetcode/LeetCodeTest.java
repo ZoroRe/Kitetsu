@@ -1,9 +1,10 @@
-package me.zoro.kitetsu.algorithm;
+package me.zoro.kitetsu.algorithm.leetcode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import lombok.extern.slf4j.Slf4j;
+import me.zoro.kitetsu.algorithm.leetcode.LeetCode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

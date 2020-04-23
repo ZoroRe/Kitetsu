@@ -4,6 +4,7 @@ package me.zoro.kitetsu.company;
  * @author luguanquan
  * @date 2020-03-07 16:48
  * @email luguanquans@qq.com
+ * 这里没啥，主要是以前测试下，但可以看看相关的单元测试，用反射的方式测了这个方法。
  */
 public class CompanyOne {
 	private static final int MONTH_AFTER_FIRST_QUARTER = 3;

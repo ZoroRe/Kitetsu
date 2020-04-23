@@ -4,6 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * <p>
  * 关于 junit5,推荐学习 https://www.ibm.com/developerworks/cn/java/j-introducing-junit5-part2-vintage-jupiter-extension-model/index.html

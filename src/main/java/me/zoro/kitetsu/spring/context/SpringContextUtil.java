@@ -1,6 +1,7 @@
 package me.zoro.kitetsu.spring.context;
 
 import lombok.extern.slf4j.Slf4j;
+import me.zoro.kitetsu.algorithm.data.structure.Queue;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

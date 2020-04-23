@@ -1,6 +1,8 @@
-package me.zoro.kitetsu.algorithm;
+package me.zoro.kitetsu.algorithm.leetcode;
 
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.Scanner;
 
 /**
  * @author luguanquan
@@ -9,6 +11,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class LeetCode {
 
+	/**
+	 * 给定两个以字符串形式表示的非负整数 num1 和 num2，返回 num1 和 num2 的乘积，它们的乘积也表示为字符串形式。
+	 * https://leetcode-cn.com/problems/multiply-strings/
+	 * @param num1
+	 * @param num2
+	 * @return
+	 */
 	public static String q43_multiply(String num1, String num2) {
 		if ("0".equals(num1) || "0".equals(num2)) {
 			return "0";
@@ -40,5 +49,25 @@ public class LeetCode {
 			builder.append(array[--index]);
 		}
 		return builder.toString();
+	}
+
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		while(in.hasNextLine()){
+			String info = in.nextLine();
+			int[] chars = new int[60];
+			char[] array = info.toCharArray();
+			StringBuilder builder = new StringBuilder();
+			int index;
+			for(int i = 0; i < array.length; i++){
+				index = array[i] - 'A';
+				if(chars[index] == 0){
+					builder.append(array[i]);
+					chars[index] = 1;
+				}
+			}
+			System.out.print(builder.toString());
+		}
+		in.close();
 	}
 }
