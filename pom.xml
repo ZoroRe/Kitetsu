@@ -117,6 +117,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- 添加 CGLib，不明外为啥是放这里不是放dependencies -->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>3.3.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
