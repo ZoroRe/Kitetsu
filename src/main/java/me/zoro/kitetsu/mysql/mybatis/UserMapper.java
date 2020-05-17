@@ -21,7 +21,7 @@ import org.apache.ibatis.annotations.*;
  *    mkdir -p mysql/data
  *  2.启动镜像并关联目录(本机端口30301映射到docker 3306， 第2步创建的目录映射到docker里mysql中，这里用户名 root,密码 LGQ@19920408)
  *   docker run -p 30301:3306 --name mysql  -v ~/Documents/mysql/data:/var/lib/mysql -e
- *  MYSQL_ROOT_PASSWORD=LGQ@19920408  -d mysql
+ *   MYSQL_ROOT_PASSWORD=LGQ@19920408  -d mysql
  * </p>
  */
 @Mapper
